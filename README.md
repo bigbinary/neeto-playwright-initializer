@@ -175,7 +175,7 @@ triggers:
 
 ```
 
-### Moving the generate .gitignore entries
+### Moving the generated .gitignore entries
 
 When generating the starter Playwright code, we generate some required .gitignore files along with it. Since the application already has a
 .gitignore file, its redundant to keep two files. So we can move all the .gitignore entries in the `playwright-tests` directory to the one
