@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "outDir": "jsCompiled",
+    "target": "ES2020",
+    "moduleResolution": "Node",
+    "lib": ["ES2021", "dom"],
+    "baseUrl": "/",
+  },
+  "exclude": ["playwright-tests/", "playwright-tests-starter/"]
+}

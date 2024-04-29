@@ -1,0 +1,23 @@
+{
+  "name": "neeto-playwright-initializer",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "S Varun <s.varun@bigbinary.com>",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "generate": "tsc && node --experimental-specifier-resolution=node jsCompiled/index.js"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.7",
+    "@types/ramda": "0.29.12",
+    "@types/readline-sync": "^1.4.8",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "@bigbinary/neeto-cist": "^1.0.9",
+    "immer": "^10.1.1",
+    "ramda": "^0.30.0",
+    "readline-sync": "^1.4.10"
+  }
+}
