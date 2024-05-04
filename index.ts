@@ -25,17 +25,29 @@ appDetails.fullName = readline.question(
   "Enter product name? (eg: neetoDesk, neetoRecord, neetoPlanner):"
 );
 
+if (!appDetails.fullName.startsWith("neeto")) {
+  throw new Error("Invalid product name");
+}
+
 appDetails.name = appDetails.fullName.replace("neeto", "");
 
 appDetails.port = readline.question(
   "Enter product port number? (eg: 9001, 9002):"
 );
 
+if (!parseInt(appDetails.port)) {
+  throw new Error("Invalid port number");
+}
+
 appDetails.productKey = readline.question(
   `Create a new project for this product in neetoPlaydash.
   Visit https://neeto-engineering.neetoplaydash.com to create a new project.
   Enter the project key for the product:`
 );
+
+if (!appDetails.productKey) {
+  throw new Error("Invalid neetoPlaydash project key");
+}
 
 appDetails.currentsId = readline.question(
   `Create a new project for this product in https://app.currents.dev.
@@ -54,7 +66,7 @@ Promise.all(
           .replaceAll("<PRODUCT_PORT>", appDetails.port)
           .replaceAll("<PLAYDASH_PROJECT_KEY>", appDetails.productKey)
           .replaceAll("<PRODUCT_FULL_NAME>", appDetails.fullName.toLowerCase())
-          .replaceAll("<PRODUCT_NAME>", appDetails.name)
+          .replaceAll("<PRODUCT_NAME>", appDetails.name.toLowerCase())
           .replaceAll("<CURRENTS_PROJECT_ID>", appDetails.currentsId)
       );
     })
